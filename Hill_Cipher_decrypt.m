@@ -16,7 +16,8 @@ function [result]=Hill_Cipher_decrypt(key,m)
         
         message = [abs(m(1))-65;abs(m(2))-65;abs(m(3))-65];
         disp('解密后的明文');
-        demessage=mod(dekey*message,26);
+        
+        demessage=mod(int32(dekey*message),26);
         disp(char(int8(rot90(demessage+65))));
         result = demessage+65;
 end
